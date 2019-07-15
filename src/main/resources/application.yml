@@ -1,0 +1,39 @@
+server:
+  port:8080
+tomcat:
+  uri-encoding:UTF-8
+spring:
+  #security:
+  # user:
+  # name: admin
+  #  password: admin
+  freemaker:
+    allow-request-override:false
+    cache:true
+    charset:UTF-8
+    check-template-location:true
+    content-type:text/html
+    expose-request-attrbutes:false
+    expose-session-attrbutes:false
+    suffix:ftl
+    template-loader-path:classpath/templates/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initial-size: 5
+    max-idle: 10
+    max-wait: 10000
+    min-idle: 5
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/xboot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    hibernate: DEBUG
+
+  path: concretepage/logs
+  pattern:
+    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
