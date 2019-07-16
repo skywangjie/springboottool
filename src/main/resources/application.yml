@@ -3,10 +3,6 @@ server:
 tomcat:
   uri-encoding:UTF-8
 spring:
-  #security:
-  # user:
-  # name: admin
-  #  password: admin
   freemaker:
     allow-request-override:false
     cache:true
@@ -17,15 +13,24 @@ spring:
     expose-session-attrbutes:false
     suffix:ftl
     template-loader-path:classpath/templates/
+
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    initial-size: 5
-    max-idle: 10
-    max-wait: 10000
-    min-idle: 5
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/xboot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
+    oracle:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+      username: hncs
+      password: 20190509
+      initial-size: 5
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+
+    mssql:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jdbc-url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=HIS_HXYW_8.0
+      password: sa
+      username: sa
+
 logging:
   level:
     org:
