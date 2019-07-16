@@ -11,7 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 /**
- * Created by WJJJ on 2019/7/16.
+ *@author WJJJ
+ *@createTime 2019/7/16 20:52
+ *@description 数据库配置类
  */
 
 @Configuration
@@ -31,7 +33,6 @@ public class DataSourceConfig {
     public DataSource secondaryDataSource() {
         return DataSourceBuilder.create().build();
     }
-
 
     @Bean(name = "oracleJdbcTemplate")
     public JdbcTemplate primaryJdbcTemplate(@Qualifier("oracleDataSource") DataSource dataSource) {
